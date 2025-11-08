@@ -96,13 +96,15 @@ cp .env.example .env.local
 
 # Vérifier que l'URL de l'API est correcte
 # NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+🚀 Frontend
 Étape 3 : Installation des dépendances
-bash
 npm install
+
 Étape 4 : Lancement du serveur de développement
-bash
 npm run dev
-✅ Frontend disponible sur : http://localhost:3000
+
+
+✅ Le frontend sera disponible sur : http://localhost:3000
 
 📊 Endpoints API
 Méthode	Endpoint	Description
@@ -114,14 +116,13 @@ GET	/api/v1/dashboard/stats	Récupérer les statistiques du tableau de bord
 GET	/health	Vérifier la santé de l'API
 GET	/health/database	Vérifier la connexion à la base de données
 🗄️ Gestion de la Base de Données
-Exportation de la base
-bash
+Exporter la base
 mysqldump -u root -p todo_db > todo_db.sql
-Importation de la base
-bash
+
+Importer la base
 mysql -u root -p todo_db < todo_db.sql
+
 Structure de la table tasks
-sql
 CREATE TABLE tasks (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
@@ -131,9 +132,14 @@ CREATE TABLE tasks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-🚀 Commandes Utiles
+
+🛠️ Commandes utiles
 Installation complète
-bash
+# Installer les dépendances frontend
+npm install
+
+# Lancer le serveur de développement
+npm run dev
 # Installer toutes les dépendances (frontend + backend)
 npm run install:all
 Lancement complet
