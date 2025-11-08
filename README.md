@@ -1,112 +1,109 @@
-TO-DO LIST Application
+# TO-DO LIST Application
 
 Application fullstack de gestion de tâches développée avec Next.js + Redux (frontend) et FastAPI + SQLAlchemy (backend).
-Elle permet de créer, mettre à jour, supprimer et gérer efficacement les tâches via un tableau de bord clair.
+Elle permet aux utilisateurs de créer, mettre à jour, supprimer et gérer les tâches efficacement via une interface de tableau de bord claire.
 
-📦 Prérequis
+Prérequis
 
 Avant de lancer le projet, assurez-vous d’avoir installé :
 
-Python 3.12+
+- [Python 3.12+](https://www.python.org/downloads/)
+- [Node.js 18+](https://nodejs.org/)
+- [MySQL](https://dev.mysql.com/downloads/)
+- [Git](https://git-scm.com/)
 
-Node.js 18+
 
-MySQL
+## 🛠 Technologies Utilisées
 
-Git
+### Frontend
+- Next.js 14
+- Redux Toolkit
+- Material-UI (MUI)
+- TypeScript
 
-🛠 Technologies Utilisées
-Frontend
+### Backend  
+- FastAPI
+- SQLAlchemy ORM
+- MySQL
+- Aerich (migrations)
+- Python 3.8+
 
-Next.js 14
+## 🚀 Installation et Lancement
 
-Redux Toolkit
+### Pré-requis
+- Node.js 18+
+- Python 3.8+
+- MySQL
 
-Material-UI (MUI)
-
-TypeScript
-
-Backend
-
-FastAPI
-
-SQLAlchemy ORM
-
-MySQL
-
-Aerich (migrations)
-
-Python 3.8+
-
-🚀 Installation et Lancement
-1️⃣ Cloner le projet
+### Installation
+```bash
+# Cloner le repository
 git clone [votre-repo-url]
 cd todo-app
 
-2️⃣ Configurer la base de données MySQL
+cloner todo_db depuis GitHub
+1️⃣ Cloner le dépôt GitHub
 
-Créer la base de données :
+Ouvrez un terminal et exécutez :
 
-CREATE DATABASE todo_db;
+git clone https://github.com/<username>/<repository>.git
+cd <repository>
 
+Importer le fichier SQL
 
-Importer les données initiales si nécessaire :
+Toujours dans le terminal :
 
 mysql -u root -p todo_db < todo_db.sql
 
-3️⃣ Backend (FastAPI)
+# Installer toutes les dépendances
+npm run install:all
 
-Aller dans le dossier backend et créer un environnement virtuel :
+# Configurer les variables d'environnement
+cp backend/.env.example backend/.env
 
+# Éditer le fichier .env avec vos paramètres MySQL
+
+Instructions d’Installation
+1️⃣ Backend (FastAPI)
+Étape 1 : Créer et activer un environnement virtuel
 cd backend
 python -m venv venv
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
+venv\Scripts\activate  # Sur Windows
+# ou
+source venv/bin/activate  # Sur Mac/Linux
 
-
-Installer les dépendances :
-
+Étape 2 : Installer les dépendances
 pip install -r requirements.txt
 
+Étape 3 : Configurer la base de données
 
-Configurer les variables d’environnement :
+Assurez-vous que MySQL fonctionne, puis créez une base de données :
 
-cp .env.example .env
-# puis éditer .env avec vos paramètres MySQL
+CREATE DATABASE todo_db;
 
-
-Générer les tables de la base :
-
+Étape 4 : Générer les tables de la base
 python create_tables.py
 
-
-Démarrer le serveur :
-
+Étape 5 : Démarrer le serveur backend
 uvicorn main:app --reload
 
 
-URL backend : http://127.0.0.1:8000
+Le backend sera disponible à :
+👉 http://127.0.0.1:8000
 
-4️⃣ Frontend (Next.js)
-
-Aller dans le dossier frontend :
-
+2️⃣ Frontend (Next.js + TypeScript)
+Étape 1 : Aller dans le dossier frontend
 cd ../frontend
 
-
-Installer les dépendances :
-
+Étape 2 : Installer les dépendances
 npm install
 
-
-Lancer le serveur de développement :
-
+Étape 3 : Lancer le serveur de développement
 npm run dev
 
 
-URL frontend : http://localhost:3000
+Ouvrez ensuite votre navigateur à :
+👉 http://localhost:3000
 
 📊 Endpoints API
 Méthode	Endpoint	Description
@@ -115,7 +112,9 @@ POST	/api/v1/tasks	Créer une nouvelle tâche
 PUT	/api/v1/tasks/{id}	Mettre à jour une tâche
 DELETE	/api/v1/tasks/{id}	Supprimer une tâche
 GET	/api/v1/dashboard/stats	Récupérer les statistiques du tableau de bord
-🗄 Sauvegarde de la base de données
+🗄️ Sauvegarde de la Base de Données
+
+Pour exporter ou importer votre base MySQL :
 
 Exporter :
 
@@ -128,33 +127,29 @@ mysql -u root -p todo_db < todo_db.sql
 
 🚀 Déploiement (optionnel)
 
-Backend : Render, Railway
+Vous pouvez déployer :
 
-Frontend : Vercel
+Backend sur Render ou Railway
+
+Frontend sur Vercel
 
 💡 Auteur
 
-Mdjenad Bia
-📧 your-email@example.com
+👤 Mdjenad Bia
+📧 Email : your-email@example.com
 
-🌐 GitHub
+🌐 GitHub : mdjenadbia
 
 🧾 Licence
 
 Ce projet est sous licence MIT — libre à utiliser et modifier.
 
-✅ Résumé d’utilisation
+✅ Résumé
 
-Lancer le backend :
+Une fois l’installation terminée :
 
-uvicorn main:app --reload
+Lancer le backend : uvicorn main:app --reload
 
+Lancer le frontend : npm run dev
 
-Lancer le frontend :
-
-npm run dev
-
-
-Ouvrir le navigateur :
-
-http://localhost:3000
+Ouvrir le navigateur : http://localhost:3000
