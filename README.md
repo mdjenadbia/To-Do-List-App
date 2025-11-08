@@ -135,8 +135,8 @@ Frontend sur Vercel
 
 💡 Auteur
 
-👤 Mdjenad Bia
-📧 Email : your-email@example.com
+👤 Messaoud DJENADBIA
+📧 Email : mdjenadbia@yahoo.fr
 
 🌐 GitHub : mdjenadbia
 
