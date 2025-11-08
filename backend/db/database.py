@@ -5,7 +5,7 @@ import os
 
 SQLALCHEMY_DATABASE_URL = os.getenv(
     "DATABASE_URL", 
-    "mysql+pymysql://root:Algeria_2025@localhost/todolistdb"
+    "mysql+pymysql://root:25032015Leila@localhost:3306/todo_db"
 )
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
