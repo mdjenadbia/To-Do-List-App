@@ -9,7 +9,6 @@ import {
   Checkbox,
   Typography,
   Chip,
-  Button,
   CircularProgress,
   Paper,
   Divider,
@@ -103,13 +102,14 @@ const TaskList: React.FC<TaskListProps> = ({
                 />
               </ListItemIcon>
 
-              {/* Task content */}
+              {/* ✅ Task content (Typography manually controlled) */}
               <ListItemText
+                disableTypography   // يمنع توليد <p> افتراضي
                 primary={
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
                     <Typography
                       variant="h6"
-                      component="span"
+                      component="div"
                       sx={{
                         ...(task.is_completed && {
                           textDecoration: 'line-through',
@@ -136,17 +136,18 @@ const TaskList: React.FC<TaskListProps> = ({
                       <Typography
                         variant="body2"
                         color="text.secondary"
+                        component="div"
                         sx={{ mb: 1 }}
                       >
                         {task.description}
                       </Typography>
                     )}
                     <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
-                      <Typography variant="caption" color="text.secondary">
+                      <Typography variant="caption" color="text.secondary" component="div">
                         Created: {formatDate(task.created_at)}
                       </Typography>
                       {task.updated_at && task.updated_at !== task.created_at && (
-                        <Typography variant="caption" color="text.secondary">
+                        <Typography variant="caption" color="text.secondary" component="div">
                           Updated: {formatDate(task.updated_at)}
                         </Typography>
                       )}
