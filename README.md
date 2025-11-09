@@ -27,8 +27,16 @@ Application fullstack de gestion de tâches développée avec Next.js + Redux (f
 ### Installation
 ```bash
 # Cloner le repository
-git clone [votre-repo-url]
+git clone [https://github.com/mdjenadbia/To-Do-List-App]
+cd To-Do-List-App
+
+# Importer la base de donnee (todo_db)
+mysql -u root -p todo_db < todo_db.sql
 cd todo-app
+
+# pour executer le programme (backend et frontend)
+  lancer le lien:
+ To-Do-List-App/start_project.bat
 
 # Installer toutes les dépendances
 npm run install:all
